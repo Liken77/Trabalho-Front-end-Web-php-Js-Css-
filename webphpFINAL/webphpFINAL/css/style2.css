@@ -1,0 +1,96 @@
+/*corpo do projeto*/
+body {
+    background: #e8f0ff;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 25px;
+}
+
+h3 {
+    color: #1c3f7c;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+p {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 900px;
+    line-height: 1.6;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+}
+/*imagem da logo*/
+#imagem {
+    width: 200px;
+    margin: 15px 0;
+    display: block;
+}
+
+h2 {
+    margin-top: 20px;
+    font-weight: 700;
+    color: #1c3f7c;
+}
+/*cabeça do projeto*/
+#pesquisa {
+    max-width: 350px;
+    border-radius: 10px;
+    border: 2px solid #1c3f7c;
+    padding: 10px;
+    background: #ffffff;
+}
+
+.btn-primary {
+    background: #28a745;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #1f8a39;
+}
+
+/*Tabelinha dos produtos*/
+.table {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-top: 15px;
+}
+
+.table th {
+    background: #1c3f7c;
+    color: #ffffff;
+    padding: 12px;
+    font-weight: 600;
+}
+
+.table td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+/*botoões*/
+.butao {
+    background: #1c3f7c;
+    padding: 6px 12px;
+    color: #ffffff;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.butao:hover {
+    background: #162e5b;
+}
+
+button.butao {
+    cursor: pointer;
+}

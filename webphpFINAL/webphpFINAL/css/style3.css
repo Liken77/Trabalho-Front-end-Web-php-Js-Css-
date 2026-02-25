@@ -1,0 +1,71 @@
+/*corpo geral*/
+body {
+    background: #1e5ac7;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    padding: 20px;
+}
+
+/*container*/
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    max-width: 700px;
+    margin: auto;
+}
+
+/*titulo*/
+h2 {
+    font-weight: 600;
+    color: #1e3d73;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/*formulario*/
+.form-control {
+    background: #f8f9fc;
+    border-radius: 10px;
+    border: 1px solid #cfd9e8;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.form-control:focus {
+    border-color: #1e5ac7;
+    box-shadow: 0 0 0 3px rgba(30, 90, 199, 0.25);
+}
+
+/*Detalhes*/
+.btn-primary {
+    background: #1e5ac7;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background: #174ba8;
+}
+
+.btn-secondary {
+    background: #7f8c8d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.btn-secondary:hover {
+    background: #6c7778;
+}
+
+/*cor do formulario editar*/
+#coreditar {
+    background: #f0f6ff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #d3e2ff;
+}
