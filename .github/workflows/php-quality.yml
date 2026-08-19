@@ -1,0 +1,33 @@
+name: PHP Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v7
+
+      - name: Validar sintaxe PHP
+        run: >-
+          docker run --rm
+          -v "$GITHUB_WORKSPACE:/app"
+          -w /app
+          php:8.3-cli
+          sh -c "find public src -name '*.php' -print0 | xargs -0 -n1 php -l"
+
+      - name: Validar Docker Compose
+        run: docker compose config --quiet
+
+      - name: Construir imagem da aplicação
+        run: docker compose build app
+
