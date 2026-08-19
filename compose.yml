@@ -1,0 +1,43 @@
+name: stockflow
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    environment:
+      DB_HOST: database
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-stockflow}
+      DB_USER: ${DB_USER:-stockflow}
+      DB_PASSWORD: ${DB_PASSWORD:-stockflow}
+    ports:
+      - "${APP_PORT:-8080}:80"
+    depends_on:
+      database:
+        condition: service_healthy
+    restart: unless-stopped
+
+  database:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-stockflow}
+      MYSQL_USER: ${DB_USER:-stockflow}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-stockflow}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
+    ports:
+      - "${DB_PORT_HOST:-3307}:3306"
+    volumes:
+      - stockflow_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u$${MYSQL_USER} -p$${MYSQL_PASSWORD} --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  stockflow_data:
+
